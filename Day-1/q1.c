@@ -6,7 +6,7 @@ int main()
     int n;
     int sum = 0;
 
-    printf("enter the number");
+    printf("enter the number :");
     scanf("%d",&n);
 
     for(int i=1;i<=n;i++)
@@ -14,7 +14,7 @@ int main()
         sum=sum+i;
     }
 
-    printf("enter the sum of numbers:%d",sum);
+    printf("sum of numbers:%d",sum);
 
     return 0;
 
