@@ -4,8 +4,7 @@
 int main()
 {
     int n;
-    int arr[100]; 
-    int count =0;  
+    int arr[100];  
 
     printf("Enter the number of elements: ");
     scanf("%d",&n);
@@ -17,37 +16,20 @@ int main()
         scanf("%d",&arr[i]);
     }
 
-
-    int firstMax =arr[0];
-    int secondMax =arr[0];
-
-    for(int i =0; i<n; i++)
+    for(int i =0; i<n-1; i++)
     {
-        if(arr[i]>firstMax)
+        for(int j=i+1; j<n; j++)
         {
-            firstMax =arr[i];
+            if(arr[i]>arr[j])
+            {
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
         }
     }
 
-    int found=0;
-
-    for(int i=0; i<n; i++)
-    {
-        if(arr[i]!=firstMax)
-        {
-           if(arr[i]>secondMax)
-           {
-              secondMax=arr[i];
-              found=1;
-           }
-        }
-
-    }
-
-    if(found)
-    printf("Second largest element of array is %d",secondMax);
-
-    
+    printf("Second largest element of array is %d",arr[n-2]);
 
     return 0;
 
